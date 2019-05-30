@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fruit
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Fruit
   - 
   - 
   - 
@@ -40,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2398682141
+    locked: 0
+  - name: Middle
+    uniqueID: 1503385687
+    locked: 0
+  - name: Top
+    uniqueID: 2743318389
+    locked: 0
+  - name: Interface
+    uniqueID: 2496513109
     locked: 0
