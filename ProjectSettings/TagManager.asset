@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fruit
   - Bomb
+  - Line
   layers:
   - Default
   - TransparentFX

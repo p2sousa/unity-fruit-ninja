@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6735845906280209447}
   - component: {fileID: 8404290891447221242}
   - component: {fileID: 4391527144202591734}
+  - component: {fileID: 8395378657051238465}
   m_Layer: 8
   m_Name: watermelon
   m_TagString: Fruit
@@ -118,3 +119,19 @@ CircleCollider2D:
   m_Offset: {x: -0.12, y: -0.04118222}
   serializedVersion: 2
   m_Radius: 1.9225338
+--- !u!114 &8395378657051238465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449696913721282617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a626bbb3deef140f79a8f5655d6f7995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watermelonLeft: {fileID: 6516259771186697985, guid: 000aa887ebdc348be827e0fef9ec0ace,
+    type: 3}
+  watermelonRight: {fileID: 3732639783538083225, guid: 42d106e4744f3443fbebf283fd88261f,
+    type: 3}
