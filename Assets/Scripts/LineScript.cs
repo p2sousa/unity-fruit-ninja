@@ -45,11 +45,23 @@ public class LineScript : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         line.SetPosition(numberVertex, mousePosition);
         numberVertex++;
+
+        BoxCollider2D linerCollider = gameObject.AddComponent<BoxCollider2D>();
+        linerCollider.transform.position = line.transform.localPosition;
+        linerCollider.size = new Vector2(0.1f, 0.1f);
     }
 
+    [System.Obsolete]
     private void DeleteLine()
     {
         numberVertex = 0;
-        line.SetVertexCount(0); 
+        line.SetVertexCount(0);
+
+        BoxCollider2D[] linesCollider = GetComponents<BoxCollider2D>();
+
+        for (int i = 0; i < linesCollider.Length; i++)
+        {
+            Destroy(linesCollider[i]);
+        }
     }
 }
