@@ -27,7 +27,7 @@ public class GeneratorBombScript : MonoBehaviour
 
     private void GenerateGroupBomb()
     {
-        if (Random.Range(0,6) > 3)
+        if (Random.Range(0, 6) > 2)
         {
             StartCoroutine("GenerateBomb");
         }

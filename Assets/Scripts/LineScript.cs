@@ -7,6 +7,7 @@ public class LineScript : MonoBehaviour
     int numberVertex = 0;
     bool pressButtonMouse = false;
     LineRenderer line;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     public void Start()
@@ -62,6 +63,21 @@ public class LineScript : MonoBehaviour
         for (int i = 0; i < linesCollider.Length; i++)
         {
             Destroy(linesCollider[i]);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bomb")
+        {
+            GameObject explosionClone = Instantiate(
+                explosion, 
+                collision.transform.position, 
+                Quaternion.identity
+            ) as GameObject;
+
+            Destroy(explosionClone, 5f);
+            Destroy(collision.gameObject);
         }
     }
 }
