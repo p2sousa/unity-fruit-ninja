@@ -6,11 +6,13 @@ public class FruitScript : MonoBehaviour
 {
     public GameObject watermelonLeft;
     public GameObject watermelonRight;
+    public AudioClip sound;
+    private GameObject objSound;
 
     // Start is called before the first frame update
     public void Start()
     {
-        
+        objSound = GameObject.FindGameObjectWithTag("SoundFruitCut");
     }
 
     // Update is called once per frame
@@ -23,6 +25,9 @@ public class FruitScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Line")
         {
+            objSound.GetComponent<AudioSource>().clip = sound;
+            objSound.GetComponent<AudioSource>().Play();
+
             GameObject left = GenerateWatermelonLeft();
             GameObject right = GenerateWatermelonRight();
 

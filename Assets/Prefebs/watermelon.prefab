@@ -135,3 +135,4 @@ MonoBehaviour:
     type: 3}
   watermelonRight: {fileID: 3732639783538083225, guid: 42d106e4744f3443fbebf283fd88261f,
     type: 3}
+  sound: {fileID: 8300000, guid: 3ea07e6be29574142992d45af6d2e22d, type: 3}
