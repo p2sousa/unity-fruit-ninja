@@ -8,14 +8,19 @@ public class LineScript : MonoBehaviour
     private bool pressButtonMouse = false;
     private LineRenderer line;
     public GameObject explosion;
-    public AudioClip sound;
-    private GameObject objSound;
+
+    public AudioClip soundBlade;
+    private GameObject objSoundBlade;
+
+    public AudioClip soundExplosion;
+    private GameObject objSoundExplosion;
 
     // Start is called before the first frame update
     public void Start()
     {
         line = GetComponent<LineRenderer>();
-        objSound = GameObject.FindGameObjectWithTag("SoundBlade");
+        objSoundBlade = GameObject.FindGameObjectWithTag("SoundBlade");
+        objSoundExplosion = GameObject.FindGameObjectWithTag("SoundExplosion");
     }
 
     // Update is called once per frame
@@ -45,8 +50,8 @@ public class LineScript : MonoBehaviour
     [System.Obsolete]
     private void CreateLine()
     {
-        objSound.GetComponent<AudioSource>().clip = sound;
-        objSound.GetComponent<AudioSource>().Play();
+        objSoundBlade.GetComponent<AudioSource>().clip = soundBlade;
+        objSoundBlade.GetComponent<AudioSource>().Play();
 
         line.SetVertexCount(numberVertex + 1);
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -76,6 +81,9 @@ public class LineScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bomb")
         {
+            objSoundExplosion.GetComponent<AudioSource>().clip = soundExplosion;
+            objSoundExplosion.GetComponent<AudioSource>().Play();
+
             GameObject explosionClone = Instantiate(
                 explosion, 
                 collision.transform.position, 
