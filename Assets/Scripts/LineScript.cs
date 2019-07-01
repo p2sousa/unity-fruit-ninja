@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class LineScript : MonoBehaviour
 {
-    int numberVertex = 0;
-    bool pressButtonMouse = false;
-    LineRenderer line;
+    private int numberVertex = 0;
+    private bool pressButtonMouse = false;
+    private LineRenderer line;
     public GameObject explosion;
+    public AudioClip sound;
+    private GameObject objSound;
 
     // Start is called before the first frame update
     public void Start()
     {
         line = GetComponent<LineRenderer>();
+        objSound = GameObject.FindGameObjectWithTag("SoundBlade");
     }
 
     // Update is called once per frame
@@ -42,6 +45,9 @@ public class LineScript : MonoBehaviour
     [System.Obsolete]
     private void CreateLine()
     {
+        objSound.GetComponent<AudioSource>().clip = sound;
+        objSound.GetComponent<AudioSource>().Play();
+
         line.SetVertexCount(numberVertex + 1);
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         line.SetPosition(numberVertex, mousePosition);
